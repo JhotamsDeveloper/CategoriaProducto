@@ -1,6 +1,6 @@
 ﻿using CategoriaProducto.Domain.Enums;
 
-namespace CategoriaProducto.Domain.Servicios.Strategy;
+namespace CategoriaProducto.Domain.Ports;
 
 public interface IDescuento
 {

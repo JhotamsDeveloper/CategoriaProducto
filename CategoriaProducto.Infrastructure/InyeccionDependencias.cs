@@ -1,4 +1,4 @@
-﻿using CategoriaProducto.Domain.Servicios.Strategy;
+﻿using CategoriaProducto.Domain.Ports;
 using CategoriaProducto.Infrastructure.Adapters;
 using Microsoft.Extensions.DependencyInjection;
 

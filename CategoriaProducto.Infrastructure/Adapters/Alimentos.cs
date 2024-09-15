@@ -1,5 +1,5 @@
 ﻿using CategoriaProducto.Domain.Enums;
-using CategoriaProducto.Domain.Servicios.Strategy;
+using CategoriaProducto.Domain.Ports;
 using System;
 using System.Collections.Generic;
 using System.Linq;

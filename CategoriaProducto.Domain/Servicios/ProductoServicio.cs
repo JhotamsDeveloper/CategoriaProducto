@@ -1,6 +1,6 @@
 ﻿using CategoriaProducto.Domain.Enums;
 using CategoriaProducto.Domain.Modelos;
-using CategoriaProducto.Domain.Servicios.Strategy;
+using CategoriaProducto.Domain.Ports;
 
 namespace CategoriaProducto.Domain.Servicios;
 
