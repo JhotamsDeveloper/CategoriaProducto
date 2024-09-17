@@ -1,15 +1,21 @@
 ﻿using CategoriaProducto.Domain.Enums;
+using CategoriaProducto.Domain.Options;
 using CategoriaProducto.Domain.Ports;
+using Microsoft.Extensions.Options;
 
 namespace CategoriaProducto.Infrastructure.Adapters;
 
-internal class Electronica : IDescuento
+internal sealed record class Electronica : IDescuento
 {
-    private const double descuento = 20;
+    private readonly DescuentoOptions descuentoOptions;
+
+    public Electronica(IOptions<DescuentoOptions> descuentoOptions)
+    {
+        this.descuentoOptions = descuentoOptions.Value;
+    }
+
     public TipoCategoria Categoria => TipoCategoria.Electronica;
 
-    public double Descuento()
-    {
-        return descuento;
-    }
+    public double Descuento() => descuentoOptions.Electronica;
+
 }

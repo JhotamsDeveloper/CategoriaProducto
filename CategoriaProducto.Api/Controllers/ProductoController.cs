@@ -21,7 +21,7 @@ public class ProductoController : ControllerBase
         this.mediator = mediator;
     }
 
-    [HttpGet(Name = "descuento")]
+    [HttpPost(Name = "descuento")]
     public async Task<IActionResult> Get(
         double valorProducto
         , TipoCategoria categoria)

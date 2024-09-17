@@ -2,10 +2,11 @@ using CategoriaProducto.Application;
 using CategoriaProducto.Infrastructure;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+ConfigurationManager configuration = builder.Configuration;
 
 builder.Services
     .AddApplication()
-    .AddInfra();
+    .AddInfra(configuration);
 
 builder.Services.AddControllers();
 

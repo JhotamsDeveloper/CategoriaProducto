@@ -1,19 +1,21 @@
 ﻿using CategoriaProducto.Domain.Enums;
+using CategoriaProducto.Domain.Options;
 using CategoriaProducto.Domain.Ports;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace CategoriaProducto.Infrastructure.Adapters
 {
-    internal class Ropa : IDescuento
+    internal sealed record class Ropa : IDescuento
     {
-        private const double DESCUENTO = 10;
-        public TipoCategoria Categoria => 
-            TipoCategoria.Ropa;
+        private readonly DescuentoOptions descuentoOptions;
 
-        public double Descuento() => DESCUENTO;
+        public Ropa(IOptions<DescuentoOptions> descuentoOptions)
+        {
+            this.descuentoOptions = descuentoOptions.Value;
+        }
+
+        public TipoCategoria Categoria => TipoCategoria.Ropa;
+
+        public double Descuento() => descuentoOptions.Ropa;
     }
 }
